@@ -1,0 +1,10 @@
+server.port: 9000
+spring.main.web-application-type: reactive
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: userProfile
+        uri: http://localhost:8081
+        predicates:
+        - Path=/hello/**

@@ -1,0 +1,6 @@
+package com.user;
+
+@Document
+public class User {
+
+}

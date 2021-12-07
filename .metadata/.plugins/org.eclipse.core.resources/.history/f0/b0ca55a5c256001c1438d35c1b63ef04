@@ -1,0 +1,3 @@
+spring.application.name=user-profile-service
+server.port=8081
+spring.data.mongodb.uri=mongodb+srv://Chirag:mongoParmar@cluster0.kizlx.mongodb.net/db01?retryWrites=true&w=majority

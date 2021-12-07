@@ -1,0 +1,11 @@
+package com.user;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
+
+public interface UserRepository extends MongoRepository <User,String>{
+
+	@Query("{ 'firstname' : ?0 }")
+	User findUsersByName(String firstname);
+	
+}
