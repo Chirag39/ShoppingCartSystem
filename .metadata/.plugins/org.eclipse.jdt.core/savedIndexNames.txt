@@ -45,7 +45,6 @@ INDEX VERSION 1.131+C:\Users\CHIPARMA\Desktop\Shopping Cart\.metadata\.plugins\o
 586694968.index
 1597320229.index
 731651447.index
-3215564888.index
 2435369196.index
 2708168959.index
 4229110668.index
@@ -70,7 +69,6 @@ INDEX VERSION 1.131+C:\Users\CHIPARMA\Desktop\Shopping Cart\.metadata\.plugins\o
 671436243.index
 3013283244.index
 565563458.index
-2584087455.index
 321132413.index
 1802731732.index
 158190971.index
@@ -87,7 +85,6 @@ INDEX VERSION 1.131+C:\Users\CHIPARMA\Desktop\Shopping Cart\.metadata\.plugins\o
 329501279.index
 3775108271.index
 1522838680.index
-3818943081.index
 3437287926.index
 3485163528.index
 1336731170.index
@@ -119,7 +116,6 @@ INDEX VERSION 1.131+C:\Users\CHIPARMA\Desktop\Shopping Cart\.metadata\.plugins\o
 3358654067.index
 2909885491.index
 3354956796.index
-2062128674.index
 1305548047.index
 3248183195.index
 1711304817.index
@@ -139,7 +135,6 @@ INDEX VERSION 1.131+C:\Users\CHIPARMA\Desktop\Shopping Cart\.metadata\.plugins\o
 1351820416.index
 3227015251.index
 1865797976.index
-2264202468.index
 2095712755.index
 2317501585.index
 2364442784.index
@@ -154,7 +149,6 @@ INDEX VERSION 1.131+C:\Users\CHIPARMA\Desktop\Shopping Cart\.metadata\.plugins\o
 229167425.index
 3870490857.index
 3572983722.index
-1932160394.index
 1694943139.index
 692887478.index
 558467647.index
@@ -162,7 +156,6 @@ INDEX VERSION 1.131+C:\Users\CHIPARMA\Desktop\Shopping Cart\.metadata\.plugins\o
 1937990412.index
 1002427598.index
 715374721.index
-851803707.index
 1611252828.index
 3785038060.index
 3810077110.index

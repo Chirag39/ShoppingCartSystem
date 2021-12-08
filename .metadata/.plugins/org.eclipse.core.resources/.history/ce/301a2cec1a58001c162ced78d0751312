@@ -1,0 +1,16 @@
+package com.product;
+
+import java.util.List;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
+
+public interface ProductRepository extends MongoRepository <Product,String>{
+
+	@Query("{ 'productName' : ?0 }")
+	Product findProductByName(String productName);
+
+	@Query("{ 'productName' : ?0 }")
+	List<Product> findAll(String category);
+
+}

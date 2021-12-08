@@ -1,0 +1,54 @@
+package com.cart;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+
+
+@RestController
+public class CartResource {
+
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	private Cart cart;
+	
+	@Autowired
+	private CartRepository cartRep;
+	
+//	@RequestMapping("cart/{id}")
+//	public User getUser(@PathVariable("id") String id) {
+//		User user= restTemplate.getForObject("http://user-profile-service/user/"+id, User.class);
+//		System.out.println(user.getId());
+//		
+//		return user;
+//	}
+	
+	@RequestMapping("cart/{id}")
+	public Product getAddProduct(@PathVariable("id") String id) {
+		Product p= restTemplate.getForObject("http://product-service/product/"+id, Product.class);
+		System.out.println(p.getProductName());
+		List<Product> items=new ArrayList<Product>();
+		items.add(p);
+		Cart cart1=new Cart(items,p.getPrice());
+		System.out.println(cart1);
+		return p;
+	}
+	
+	@GetMapping("/cart")
+	public List<Cart> getProduct(){
+	return cartRep.findAll();
+	}
+	
+
+	
+}
