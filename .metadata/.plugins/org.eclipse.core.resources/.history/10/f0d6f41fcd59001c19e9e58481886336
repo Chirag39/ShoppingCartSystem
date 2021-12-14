@@ -1,0 +1,18 @@
+package com.order;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+
+public class OrderController {
+	
+	@Autowired
+	private OrderRepository orderRep;
+	
+	
+	@GetMapping("/order")
+	public List<Order> getProduct(){
+	return orderRep.findAll();
+	}
+}

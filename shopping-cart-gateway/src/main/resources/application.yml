@@ -28,4 +28,8 @@ spring:
         uri: http://localhost:8085
         predicates:
         - Path=/wallet/**
+      - id: swagger-ui
+        uri: http://localhost:8081
+        predicates:
+        - Path=/swagger-ui/**,/swagger-resources/**,/swagger-ui.html,/v2/api-docs,/webjars/**,/view/**,swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config
       

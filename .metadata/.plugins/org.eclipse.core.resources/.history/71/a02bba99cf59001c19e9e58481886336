@@ -1,0 +1,39 @@
+package com.order;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+@RestController
+public class OrderController {
+	
+	@Autowired
+	private OrderRepository orderRep;
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	
+	@GetMapping("/order")
+	public List<Order> getProduct(){
+	 return orderRep.findAll();
+	}
+	
+	@PutMapping("/order/{id}/{cartId}")
+	public String placeOrder(@RequestBody Order o, @PathVariable String id, @PathVariable String cartId) {
+		
+		Cart c= restTemplate.getForObject("http://cart-service/cart/"+cartId, Cart.class);
+		
+		o.setOrderId(id);
+		o.setCart(c);
+		o.setAmount(o.getAmount()+c.getCartPrice());
+		orderRep.save(o);
+		return ("Order Placed");
+	}
+}

@@ -1,8 +1,0 @@
-package com.wallet;
-
-public class Snippet {
-	public static void main(String[] args) {
-		hello
-	}
-}
-

@@ -9,6 +9,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
+import com.user.model.User;
+import com.user.repository.UserRepository;
+
+
 @SpringBootApplication
 @EnableEurekaClient
 public class UserProfileServiceApplication implements CommandLineRunner{

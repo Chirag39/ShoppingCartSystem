@@ -1,7 +1,0 @@
-package com.user;
-
-
-@RestController
-public class HelloWorldController {
-
-}

@@ -12,6 +12,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+import com.cart.model.Cart;
+import com.cart.model.Product;
+import com.cart.repository.CartRepository;
+
 
 @SpringBootApplication
 @EnableEurekaClient

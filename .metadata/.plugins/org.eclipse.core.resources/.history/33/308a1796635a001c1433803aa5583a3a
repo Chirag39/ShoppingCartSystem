@@ -1,0 +1,60 @@
+package com.order;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+@RestController
+public class OrderController {
+	
+	@Autowired
+	private OrderRepository orderRep;
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	
+	@GetMapping("/order")
+	public List<Order> getProduct(){
+	 return orderRep.findAll();
+	}
+	
+	@RequestMapping(method=RequestMethod.POST,value="/order")
+	public void addOrder(@RequestBody Order o) {
+		orderRep.save(o);
+	}
+	
+	@PutMapping("/order/{id}/{cartId}")
+	public String placeOrder( @PathVariable String id, @PathVariable String cartId) {
+		
+		Order o=orderRep.findById(id).orElse(null);
+		Cart c= restTemplate.getForObject("http://cart-service/cart/"+cartId, Cart.class);
+		
+		o.setOrderId(id);
+		o.setCart(c);
+		o.setAmount(o.getAmount()+c.getCartPrice());
+		orderRep.save(o);
+		return ("Order Placed");
+	}
+	
+	@PutMapping("/order/{id}/user/{cartId}")
+	public String setUser( @PathVariable String id, @PathVariable String cartId) {
+		
+		Order o=orderRep.findById(id).orElse(null);
+		Cart c= restTemplate.getForObject("http://cart-service/cart/"+cartId, Cart.class);
+		
+		o.setOrderId(id);
+		o.setCart(c);
+		o.setAmount(o.getAmount()+c.getCartPrice());
+		orderRep.save(o);
+		return ("Order Placed");
+	}
+}

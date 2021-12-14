@@ -1,0 +1,38 @@
+package com.order;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+
+@SpringBootApplication
+@EnableEurekaClient
+public class OrderServiceApplication implements CommandLineRunner{
+
+	public static void main(String[] args) {
+		SpringApplication.run(OrderServiceApplication.class, args);
+	}
+	
+	
+	@Autowired
+	private OrderRepository orderRep;
+
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		if(orderRep.findAll().isEmpty())
+		{
+			orderRep.save();
+		}
+		for(Order o:orderRep.findAll())
+		{
+		System.out.println(o);
+		}
+	}
+
+}
