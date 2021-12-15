@@ -3,14 +3,16 @@ package com.user.repository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import com.user.model.User;
+import com.user.model.Users;
 
-public interface UserRepository extends MongoRepository <User,String>{
+public interface UserRepository extends MongoRepository <Users,String>{
 
 	@Query("{ 'fullName' : ?0 }")
-	User findUsersByName(String fullName);
+	Users findUsersByName(String fullName);
 
 	@Query("{ mobileNumber : ?0 }")
-	User findUsersByMobile(Long mobileNumber);
+	Users findUsersByMobile(Long mobileNumber);
+	
+//	Users findByUsername(String username);
 	
 }

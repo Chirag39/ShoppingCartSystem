@@ -9,7 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-import com.user.model.User;
+import com.user.model.Users;
 import com.user.repository.UserRepository;
 
 
@@ -34,10 +34,10 @@ public class UserProfileServiceApplication implements CommandLineRunner{
 		 add.add("A-101, sid, nsp,mum"); 
 		if(repo.findAll().isEmpty())
 		{
-		repo.save(new User("Max Verstappen","Customer","max33@rb.com","pass","M","Best user","3-3-1997",123L,add));
-		repo.save(new User("Sergio Perez","Merchant","checo11@rb.com","pass","M","I am merchant","1-1-1980",123L,add));
+		repo.save(new Users("Max Verstappen","Customer","max33@rb.com","max33","pass","M","Best user","3-3-1997",123L,add));
+		repo.save(new Users("Sergio Perez","Merchant","checo11@rb.com","checo11","pass","M","I am merchant","1-1-1980",123L,add));
 		}
-		for(User u:repo.findAll())
+		for(Users u:repo.findAll())
 		{
 		System.out.println(u);
 		}

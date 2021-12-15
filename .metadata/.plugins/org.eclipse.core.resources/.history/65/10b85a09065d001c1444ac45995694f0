@@ -1,0 +1,14 @@
+package com.wallet.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.wallet.repository.WalletRepository;
+
+@RestController
+public class WalletController {
+	
+	@Autowired
+	private WalletRepository walletRepo;
+
+}

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.user.model.User;
+import com.user.model.Users;
 import com.user.repository.UserRepository;
 
 @RestController
@@ -20,32 +20,32 @@ public class UserController {
 	private UserRepository userRep;
 	
 	@GetMapping("/user")
-	public List<User> getUsers(){
+	public List<Users> getUsers(){
 	return userRep.findAll();
 	}
 
 	@RequestMapping(method=RequestMethod.POST,value="/user")
-	public void addUser(@RequestBody User u) {
+	public void addUser(@RequestBody Users u) {
 		userRep.save(u);
 	}
 
 	@GetMapping("/user/{id}")
-	public User getUserById(@PathVariable String id) {
+	public Users getUserById(@PathVariable String id) {
 		return userRep.findById(id).orElse(null);
 	}
 	
 	@GetMapping("/user/name/{fullName}")
-	public User findUserByName( @PathVariable String fullName ){
+	public Users findUserByName( @PathVariable String fullName ){
 	return userRep.findUsersByName( fullName );
 	}
 	
 	@GetMapping("/user/mobile/{mobileNumber}")
-	public User findUserByMobile( @PathVariable Long mobileNumber ){
+	public Users findUserByMobile( @PathVariable Long mobileNumber ){
 	return userRep.findUsersByMobile( mobileNumber );
 	}
 	
 	@PutMapping("/user/update/{id}")
-	public String updateProfile(@RequestBody User u, @PathVariable String id) {
+	public String updateProfile(@RequestBody Users u, @PathVariable String id) {
 	u.setId( id );
 	userRep.save(u);
 	return ("Updated Successfully");

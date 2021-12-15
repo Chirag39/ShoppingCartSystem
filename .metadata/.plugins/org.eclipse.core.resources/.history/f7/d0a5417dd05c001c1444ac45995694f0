@@ -1,0 +1,7 @@
+package com.user.security;
+
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+public class MongoUserDetailsService implements UserDetailsService{
+
+}

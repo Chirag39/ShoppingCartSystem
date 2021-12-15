@@ -1,0 +1,11 @@
+package com.user.security;
+
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+@Configuration
+@EnableConfigurationProperties
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
+
+}

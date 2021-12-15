@@ -1,0 +1,22 @@
+package com.wallet.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.wallet.model.Wallet;
+import com.wallet.repository.WalletRepository;
+
+@RestController
+public class WalletController {
+	
+	@Autowired
+	private WalletRepository walletRepo;
+
+	@GetMapping("/wallet")
+	public List<Wallet> getWallet(){
+	return walletRepo.findAll();
+	}
+}

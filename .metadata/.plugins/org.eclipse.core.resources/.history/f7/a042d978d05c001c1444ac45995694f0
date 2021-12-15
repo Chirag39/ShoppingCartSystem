@@ -1,0 +1,5 @@
+package com.user.security;
+
+public class MongoUserDetailsService implements UserDetailsService{
+
+}
