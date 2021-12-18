@@ -83,14 +83,8 @@ public class CartResource {
 	
 	@RequestMapping(method=RequestMethod.PUT,value="/cart/rem/{id}/{productId}")
 	public String removeProduct(@PathVariable String id, @PathVariable int productId) {
-		Cart c=cartRep.findById(id).orElse(null);
-		
-//		Product prod= restTemplate.getForObject("http://product-service/product/"+productId, Product.class);		
-//		c.getItems().removeIf(p->p.getProductId().equals(productId));
-		
+		Cart c=cartRep.findById(id).orElse(null);		
 		Product prod=c.getItems().get(productId-1);
-//
-//		c.getItems().remove(productId);
 		c.removeItem(prod);
 		c.setCartPrice(c.getCartPrice()-prod.getPrice());
 		

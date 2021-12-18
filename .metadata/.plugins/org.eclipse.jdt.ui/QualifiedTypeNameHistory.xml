@@ -55,4 +55,5 @@
     <fullyQualifiedTypeName name="com.wallet.model.User"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
     <fullyQualifiedTypeName name="com.order.entity.Wallet"/>
+    <fullyQualifiedTypeName name="com.order.repository.WalletRepository"/>
 </qualifiedTypeNameHistroy>

@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
-org.springframework.ide.eclipse.boot.wizard.PopularityTracker.cloud-eureka=6
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.cloud-eureka=7
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.cloud-eureka-server=1
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.cloud-gateway=2
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.data-mongodb=5
